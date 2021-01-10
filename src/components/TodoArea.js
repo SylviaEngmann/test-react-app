@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
+import '../App.css';
 import NavBar from './NavBar';
+import Modal from 'react-modal';
+import AddTodo from './AddTodo';
+import TodoList from './TodoList'
 
 
 const backgroundRectangle = {
@@ -11,7 +15,7 @@ const backgroundRectangle = {
     height: "700px",
     border: "none",
     borderRadius: "8px",
-    top: "100px",
+    top: "75px",
     left: "500px"
 };
 
@@ -30,19 +34,39 @@ const buttonStyle = {
     fontWeight: "700"
 };
 
+
 export default class TodoArea extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            open:false
+        };
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    }
+    handleOpen = () => {
+        this.setState({open: true})
+    }
+    handleClose = () => {
+        this.setState({open: false})
+    }
     render () {
-        const{
-            onClick,
-        } = this.props
 
         return (
         <div style={backgroundRectangle}>
             <NavBar></NavBar>
+            <TodoList></TodoList>
             <button
-              onClick={onClick}
+              onClick={this.handleOpen}
               style={buttonStyle}
             >ADD TASK</button>
+            <Modal 
+            isOpen={this.state.open}
+            className="modalStyle"
+            >
+                <AddTodo></AddTodo>
+            </Modal>
+
         </div>
         )
     }

@@ -20,12 +20,6 @@ export default class NavBar extends Component {
         return (
             <div>
                 <h1 style={navHeader}>JUST DO IT</h1>
-                <ul 
-                    style={listStyle}
-                >
-                    <li>TODAY</li>
-                    <li>CALENDAR</li>
-                </ul>
             </div>
             
         )
