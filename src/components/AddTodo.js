@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 
-export default class CreateTask extends Component {
+export default class AddTodo extends Component {
     render () {
         return (
             <div>

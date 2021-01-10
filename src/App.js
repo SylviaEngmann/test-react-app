@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
 import BackgroundImage from './components/BackgroundImage'
-import BackgroundRectangle from './components/BackgroundRectangle'
+import TodoArea from './components/TodoArea'
 
 class App extends Component {
   render() {
     return (
       <div>
         <BackgroundImage></BackgroundImage>
-        <BackgroundRectangle></BackgroundRectangle>
+        <TodoArea></TodoArea>
       </div>
       
     )

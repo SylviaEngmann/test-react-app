@@ -7,12 +7,27 @@ const navHeader = {
     color: "rgba(229, 56, 85, 1)",
     position: "absolute",
     top: "0px",
-    left: "50%"
+    left: "200px"
+}
+
+const listStyle = {
+    listStyleType: "none",
+    margin: "0",
+    padding: "0",
 }
 export default class NavBar extends Component {
     render () {
         return (
-            <h1 style={navHeader}>JUST DO IT</h1>
+            <div>
+                <h1 style={navHeader}>JUST DO IT</h1>
+                <ul 
+                    style={listStyle}
+                >
+                    <li>TODAY</li>
+                    <li>CALENDAR</li>
+                </ul>
+            </div>
+            
         )
     }
 }

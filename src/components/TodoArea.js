@@ -30,13 +30,15 @@ const buttonStyle = {
     fontWeight: "700"
 };
 
-export default class BackgroundRectangle extends Component {
+export default class TodoArea extends Component {
     render () {
         const{
             onClick,
         } = this.props
+
         return (
         <div style={backgroundRectangle}>
+            <NavBar></NavBar>
             <button
               onClick={onClick}
               style={buttonStyle}
