@@ -10,11 +10,12 @@ const navHeader = {
     left: "200px"
 }
 
+/*
 const listStyle = {
     listStyleType: "none",
     margin: "0",
     padding: "0",
-}
+}*/
 export default class NavBar extends Component {
     render () {
         return (

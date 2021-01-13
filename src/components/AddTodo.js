@@ -17,36 +17,69 @@ const buttonStyle = {
 };
 
 export default class AddTodo extends Component {
-    render () {
-        const{
-            onClick,
-        } = this.props
+    constructor(props) {
+        super(props);
+        this.state = {
+            taskname: '',
+            taskdescription: '',
+            duedate: '',
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
+    handleChange = e => {
+        const value = e.target.value;
+        this.setState({
+            [e.target.name]: value
+        });
+    }
+
+    handleSubmit = e => {
+        console.log (this.state);
+        fetch('http://localhost:3600/todolist', {
+        method: 'POST',
+        body: JSON.stringify(this.state)})
+        .then((response) => {
+            console.log(response)
+            return response.json();
+        })
+        .then();
+        e.preventDefault();
+    }
+
+    render () {
         return (        
                <form onSubmit={this.handleSubmit}>
                     <h2>Create new task</h2>
-                    <label for="task-title" className="formLabel">Task Title</label>
+                    <label htmlFor="task-name" className="formLabel">Task Name</label>
                     <input
                         type="text"
-                        id="task-title"
-                        value={this.state.taskTitle}
-                        name="task-title"/>
-                    <label for="task-description" className="formLabel">Description</label>
+                        id="task-name"
+                        value={this.state.taskname}
+                        name="taskname"
+                        onChange={this.handleChange}
+                        />
+                    <label htmlFor="task-description" className="formLabel">Description</label>
                     <input
                         type="text"
                         id="task-description"
-                        value={this.state.taskDescription}
-                        name="task-description"/>
-                    <label for="due-date" className="formLabel">Due Date</label>
+                        value={this.state.taskdescription}
+                        name="taskdescription"
+                        onChange={this.handleChange}
+                        />
+                    <label htmlFor="due-date" className="formLabel">Due Date</label>
                     <input
                         type="date"
                         id="due-date"
-                        value={this.state.dueDate}
-                        name="due-date"/>
-                    <label for="priority" className="formLabel">Priority</label>
+                        value={this.state.duedate}
+                        name="duedate"
+                        onChange={this.handleChange}
+                        />
+                    <label htmlFor="priority" className="formLabel">Priority</label>
 
                     <button
-                    onClick={onClick}
+                    type="submit"
                     style={buttonStyle}
             >Create Task</button>
                 </form>

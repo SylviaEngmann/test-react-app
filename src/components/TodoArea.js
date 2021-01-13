@@ -50,6 +50,11 @@ export default class TodoArea extends Component {
     handleClose = () => {
         this.setState({open: false})
     }
+
+    componentDidMount() {
+        Modal.setAppElement('body');
+     }
+
     render () {
 
         return (
