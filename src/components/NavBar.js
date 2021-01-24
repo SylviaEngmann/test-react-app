@@ -5,17 +5,12 @@ const navHeader = {
     fontSize: "36px",
     fontWeight: "600",
     color: "rgba(229, 56, 85, 1)",
-    position: "absolute",
+    position: "relative",
+    textAlign: "center",
     top: "0px",
-    left: "200px"
+    left: "0px"
 }
 
-/*
-const listStyle = {
-    listStyleType: "none",
-    margin: "0",
-    padding: "0",
-}*/
 export default class NavBar extends Component {
     render () {
         return (

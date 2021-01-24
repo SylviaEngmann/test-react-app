@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
+
 
 export default class TodoList extends Component {
     constructor(props) {
@@ -23,7 +27,12 @@ export default class TodoList extends Component {
             {this.state.items.map((item) => {
                 return (
                     <div key={item.id} className='todo-rect'>
-                        <div className='todo'>{item.taskname}</div>
+                        <div className='todo'>
+                            {item.taskname}
+                            <span className='icon-style'>
+                                <FontAwesomeIcon icon={faArrowCircleRight} />
+                            </span>
+                        </div>  
                     </div>
                 )
             })}

@@ -16,6 +16,11 @@ form-label {
   color: rgba(142, 119, 119, 1);
 }
 
+.icon-style {
+  position: relative;
+  left: 0px;
+}
+
 .modalStyle {
   width: 500px;
   height: 500px;
@@ -29,10 +34,10 @@ form-label {
 
 .todo {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
-  height: 100px;
-  width: 500px;
-  position: absolute;
-  margin: 10px 10px;
+  height: 55px;
+  width: 450px;
+  position: relative;
+  padding:5px 0px 0px 0px;
   font-family: Heebo;
   font-size: 18px;
   font-weight: 500;
@@ -40,10 +45,10 @@ form-label {
   text-align: center;
 }
 
+
 .todo-rect {
   position: relative;
-  /*top: 100px;
-  left: 100px*/
-  margin: 5px 5px;
-
+  top: 50px;
+  left: 100px;
+  margin: 5px 5px 20px;
 }
