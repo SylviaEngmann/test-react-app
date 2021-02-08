@@ -1,18 +1,33 @@
 import React, {Component} from 'react';
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
+//import Dialog from '@material-ui/core/Dialog';
 
 
 export default class TodoList extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
-
         this.state = {
-            items: []
+            items:[],
         };
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        
     }
+    handleOpen = (task) => {
+        this.setState({open: true})
+        this.setState({task : task});
+        console.log('View details clicked');
+    }
+    handleClose = () => {
+        this.setState({open: false})
+    }
+
+    /*
+    componentDidMount() {
+        Modal.setAppElement('body');
+     }*/
     
     componentDidMount(){
         fetch('http://localhost:3600/todolist')
@@ -30,7 +45,10 @@ export default class TodoList extends Component {
                         <div className='todo'>
                             {item.taskname}
                             <span className='icon-style'>
-                                <FontAwesomeIcon icon={faArrowCircleRight} />
+                                <FontAwesomeIcon 
+                                icon={faArrowCircleRight} 
+                                onClick={() => {this.handleOpen(item.id)}}
+                                />
                             </span>
                         </div>  
                     </div>

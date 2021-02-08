@@ -5,10 +5,25 @@
 input {
   border-bottom: 2px grey;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 12px 20px;
 }
 
-form-label {
+div.formStyle {
+  display: block;
+  text-align: center;
+}
+
+/*
+.formStyle {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}*/
+
+.form-label {
   font-family: 'Heebo';
   font-size: 24px;
   font-style: normal;
@@ -37,18 +52,31 @@ form-label {
   height: 55px;
   width: 450px;
   position: relative;
+  /*margin: auto;*/
   padding:5px 0px 0px 0px;
   font-family: Heebo;
   font-size: 18px;
   font-weight: 500;
   font-style: normal;
   text-align: center;
+  overflow-x: hidden; 
+  overflow-y: auto; 
 }
-
 
 .todo-rect {
   position: relative;
   top: 50px;
   left: 100px;
   margin: 5px 5px 20px;
+}
+
+.todoName {
+  position: relative;
+  font-family: Heebo;
+  font-size: 45px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: #000000;
+
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import NavBar from './NavBar';
+import Dialog from '@material-ui/core/Dialog';
 import Modal from 'react-modal';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList'
@@ -65,12 +66,15 @@ export default class TodoArea extends Component {
               onClick={this.handleOpen}
               style={buttonStyle}
             >ADD TASK</button>
-            <Modal 
-            isOpen={this.state.open}
-            className="modalStyle"
+            <Dialog 
+            open={this.state.open}
+            onRequestClose={this.handleClose}
+            fullWidth={true}
+            maxWidth = {'md'}
+            //className="modalStyle"
             >
-                <AddTodo></AddTodo>
-            </Modal>
+                    <AddTodo></AddTodo>
+            </Dialog>
 
         </div>
         )

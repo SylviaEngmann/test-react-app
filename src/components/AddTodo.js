@@ -37,20 +37,23 @@ export default class AddTodo extends Component {
 
     handleSubmit = e => {
         console.log (this.state);
+        e.preventDefault();
+
         fetch('http://localhost:3600/todolist', {
         method: 'POST',
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(this.state)})
         .then((response) => {
             console.log(response)
             return response.json();
         })
         .then();
-        e.preventDefault();
     }
 
     render () {
-        return (        
-               <form onSubmit={this.handleSubmit}>
+        return (  
+            <div className = "formStyle">
+                <form onSubmit={this.handleSubmit}>
                     <h2>Create new task</h2>
                     <label htmlFor="task-name" className="formLabel">Task Name</label>
                     <input
@@ -83,6 +86,8 @@ export default class AddTodo extends Component {
                     style={buttonStyle}
             >Create Task</button>
                 </form>
+            </div>      
+               
         )
     }
 }
