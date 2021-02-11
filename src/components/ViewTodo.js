@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Dialog from '@material-ui/core/Dialog';
 
 
-export default class ViewTodo extends Component {
+class ViewTodo extends Component {
 
             constructor(props) {
                 super(props);
@@ -18,8 +18,17 @@ export default class ViewTodo extends Component {
             render () {
                 return (
                     <div>
-                        <Dialog></Dialog>
+                        {/* <Dialog
+                        open={this.state.open}
+                        onClose={this.handleClose}
+                        fullWidth={true}
+                        maxWidth = {'md'}
+                        >
+
+                        </Dialog> */}
                     </div>
                 )
             }
 }
+
+export default ViewTodo;

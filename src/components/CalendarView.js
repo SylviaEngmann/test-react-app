@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class CalendarView extends Component {
+ class CalendarView extends Component {
     render () {
         return (
         <div>
@@ -8,3 +8,5 @@ export default class CalendarView extends Component {
         )
     }
 }
+
+export default CalendarView;

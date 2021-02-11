@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
-//import Dialog from '@material-ui/core/Dialog';
+import Dialog from '@material-ui/core/Dialog';
+import ViewTodo from './ViewTodo';
 
 
-export default class TodoList extends Component {
+class TodoList extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -54,7 +55,17 @@ export default class TodoList extends Component {
                     </div>
                 )
             })}
+            <Dialog
+            open={this.state.open}
+            onClose={this.handleClose}
+            fullWidth={true}
+            maxWidth = {'lg'}
+            >
+                <ViewTodo></ViewTodo>
+            </Dialog>
             </div>
         )
     }
 }
+
+export default TodoList;

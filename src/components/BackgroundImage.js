@@ -8,7 +8,7 @@ const imageSize = {
     top: "200px"
 };
 
-export default class BackgroundImage extends Component {
+class BackgroundImage extends Component {
     render () {
         return (
             <div>
@@ -17,3 +17,5 @@ export default class BackgroundImage extends Component {
         )
     }
 }
+
+export default BackgroundImage;

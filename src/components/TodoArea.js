@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import Dialog from '@material-ui/core/Dialog';
 import Modal from 'react-modal';
 import AddTodo from './AddTodo';
-import TodoList from './TodoList'
+import TodoList from './TodoList';
 
 
 const backgroundRectangle = {
@@ -36,7 +36,7 @@ const buttonStyle = {
 };
 
 
-export default class TodoArea extends Component {
+class TodoArea extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -68,15 +68,16 @@ export default class TodoArea extends Component {
             >ADD TASK</button>
             <Dialog 
             open={this.state.open}
-            onRequestClose={this.handleClose}
+            onClose={this.handleClose}
             fullWidth={true}
             maxWidth = {'md'}
-            //className="modalStyle"
             >
-                    <AddTodo></AddTodo>
+            <AddTodo></AddTodo>
             </Dialog>
 
         </div>
         )
     }
 }
+
+export default TodoArea;

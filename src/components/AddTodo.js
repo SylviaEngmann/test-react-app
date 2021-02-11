@@ -16,7 +16,7 @@ const buttonStyle = {
     fontWeight: "700"
 };
 
-export default class AddTodo extends Component {
+class AddTodo extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,6 +26,11 @@ export default class AddTodo extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        
+    }
+
+    handleClose = () => {
+        this.setState({open: false})
     }
 
     handleChange = e => {
@@ -84,6 +89,8 @@ export default class AddTodo extends Component {
                     <button
                     type="submit"
                     style={buttonStyle}
+                    onClose={this.handleClose}
+
             >Create Task</button>
                 </form>
             </div>      
@@ -91,3 +98,5 @@ export default class AddTodo extends Component {
         )
     }
 }
+
+export default AddTodo;
